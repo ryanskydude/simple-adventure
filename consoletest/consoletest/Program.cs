@@ -2,7 +2,9 @@
 
 namespace consoletest
 {
-    public static class Game {
+    public static class Game
+    {
+
 
         public static void StartGame()
         {
@@ -52,7 +54,7 @@ namespace consoletest
                 Console.WriteLine("You can't be UnderAge!");
                 return;
             }
-            else if(characterAge > 18)
+            else if (characterAge > 18)
             {
                 Console.WriteLine("Your Age is " + characterAge + "!");
             }
@@ -67,13 +69,12 @@ namespace consoletest
             bool dead = false;
             Console.WriteLine("You Enter the Temple, It's Walls shining a blue hue. 'my first quest' you thought, as you entered. what do you do?");
             string userAction = Console.ReadLine();
-            if(userAction == "walk" || userAction == "run")
+            if (userAction == "walk" || userAction == "run")
             {
                 Console.WriteLine("you move deeper into the temple, when suddenly, a goblin appears! what will you do?");
             }
             userAction = Console.ReadLine();
             armorToughness = 2.5;
-
             while (!dead)
             {
                 Console.WriteLine("The Goblin stands before you, growling in gibberish. \n HP: " + enemyHP + "\n Your HP: " + playerHP);
@@ -98,12 +99,22 @@ namespace consoletest
                     dead = true;
                 }
             }
+            if(playerHP <= 0)
+            {
+                Console.WriteLine("you have perished.");
+                Environment.Exit(6);
+            }
+            if(enemyHP <= 0)
+            {
+                Console.WriteLine("you have killed the goblin!");
+            }
         }
 
-        }
-}
+    }
 
-    class Item { 
+
+    class Item
+    {
     }
     class MainClass
     {
@@ -114,4 +125,5 @@ namespace consoletest
             Console.ReadKey();
         }
     }
+}
 
