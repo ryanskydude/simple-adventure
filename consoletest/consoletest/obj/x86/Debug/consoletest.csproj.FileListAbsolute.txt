@@ -1,0 +1,6 @@
+/home/samuraiweebr/Projects/consoletest/consoletest/bin/Debug/consoletest.exe
+/home/samuraiweebr/Projects/consoletest/consoletest/bin/Debug/consoletest.pdb
+/home/samuraiweebr/Projects/consoletest/consoletest/obj/x86/Debug/consoletest.csprojAssemblyReference.cache
+/home/samuraiweebr/Projects/consoletest/consoletest/obj/x86/Debug/consoletest.csproj.CoreCompileInputs.cache
+/home/samuraiweebr/Projects/consoletest/consoletest/obj/x86/Debug/consoletest.exe
+/home/samuraiweebr/Projects/consoletest/consoletest/obj/x86/Debug/consoletest.pdb

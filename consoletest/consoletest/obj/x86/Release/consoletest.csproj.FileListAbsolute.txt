@@ -1,0 +1,3 @@
+/home/samuraiweebr/Projects/consoletest/consoletest/bin/Release/consoletest.exe
+/home/samuraiweebr/Projects/consoletest/consoletest/obj/x86/Release/consoletest.csproj.CoreCompileInputs.cache
+/home/samuraiweebr/Projects/consoletest/consoletest/obj/x86/Release/consoletest.exe
