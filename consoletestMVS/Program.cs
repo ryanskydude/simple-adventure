@@ -193,6 +193,7 @@ namespace consoletest
                     Console.WriteLine("he lifted his cleaver over his head, bringing it down on your neck, you head coming clean off.");
                     Console.WriteLine("you have perished. \n ending achieved! slayed by the Lord");
                     Console.WriteLine("Thanks for playing my demo of my new game: simple adventure! as i learn to code, the newer games and versions will be released. check my github often!");
+                    userAction = Console.ReadLine();
                     Environment.Exit(10);
                 }
                 if(enemyHP <= 0)
@@ -201,6 +202,7 @@ namespace consoletest
                     Console.WriteLine("you walk to your home village, bearing the Lords head. the town praises your heroic deeds.");
                     Console.WriteLine("Ending achieved! True Hero");
                     Console.WriteLine("Thanks for playing my demo of my new game: simple adventure! as i learn to code, the newer games and versions will be released. check my github often!");
+                    userAction = Console.ReadLine();
                     Environment.Exit(10);
                 }
             }
