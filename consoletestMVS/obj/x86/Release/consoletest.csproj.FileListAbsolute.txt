@@ -1,0 +1,3 @@
+C:\Users\jdunn\Downloads\consoletest\bin\Release\consoletest.exe
+C:\Users\jdunn\Downloads\consoletest\obj\x86\Release\consoletest.csproj.CoreCompileInputs.cache
+C:\Users\jdunn\Downloads\consoletest\obj\x86\Release\consoletest.exe

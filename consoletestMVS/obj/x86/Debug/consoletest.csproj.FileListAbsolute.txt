@@ -1,0 +1,6 @@
+C:\Users\jdunn\Downloads\consoletest\bin\Debug\consoletest.exe
+C:\Users\jdunn\Downloads\consoletest\bin\Debug\consoletest.pdb
+C:\Users\jdunn\Downloads\consoletest\obj\x86\Debug\consoletest.csprojAssemblyReference.cache
+C:\Users\jdunn\Downloads\consoletest\obj\x86\Debug\consoletest.csproj.CoreCompileInputs.cache
+C:\Users\jdunn\Downloads\consoletest\obj\x86\Debug\consoletest.exe
+C:\Users\jdunn\Downloads\consoletest\obj\x86\Debug\consoletest.pdb
