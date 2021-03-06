@@ -152,6 +152,7 @@ namespace consoletest
                     Console.WriteLine("\"you have made a good decision. here, take it.\" he hands you the gifts, as he escapes through a trap door.");
                     Console.WriteLine("you head home, with your new gear on, and way richer than before. ending achieved! Greedy");
                     Console.WriteLine("Thanks for playing my demo of my new game: simple adventure! as i learn to code, the newer games and versions will be released. check my github often!");
+                    Console.ReadLine();
                     Environment.Exit(10);
                 }
                 else if(userAction == "decline" || userAction == "attack")
