@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Threading;
 
 namespace consoletest
 {
-    public static class Game
+    
+    class Game : SentryRPGTools
     {
 
-
+        
         public static void StartGame()
         {
             String title = @"
@@ -25,6 +27,11 @@ namespace consoletest
 | | | | (_| |\ V /  __/ | | | |_| |_| | | |  __/
 \_| |_/\__,_| \_/ \___|_| |_|\__|\__,_|_|  \___|";
 
+            //Inventory stuff
+            const int inventorySlots = 8;
+            string[,] inventory = new string[inventorySlots, inventorySlots];
+            SentryRPGTools.InventoryInit(inventorySlots, inventory);
+
             Console.ForegroundColor = ConsoleColor.Red;
             //this is the code for the title big man
             Console.WriteLine(title);
@@ -33,22 +40,40 @@ namespace consoletest
             Console.WriteLine("This is A Very Basic Game.");
             Console.WriteLine("DISCLAIMER: This is game is really simple. i doubt you will enjoy it. \n do you accept the fact that this game could be quick or crap?");
             string userResponse = Console.ReadLine();
+
             //eula to tell someone to fuck off if they gonna judge
-            if (userResponse == "Yes")
+            if (userResponse.ToLower() == "yes")
             {
                 Console.WriteLine("Then enjoy the experience.");
             }
-            else if (userResponse == "No" || userResponse == "no")
+            else if (userResponse.ToLower() == "no")
             {
                 Console.WriteLine("Then Go Away.");
                 Environment.Exit(5);
+            }
+            else if (userResponse.ToLower() == "maybe")
+            {
+                Console.WriteLine("Make your mind up you fucking wanker");
+            }
+            else
+            {
+                Console.WriteLine("That doesn't look right. Answer must be yes/no");
+                if (userResponse.ToLower() == "yes")
+                {
+                    Console.WriteLine("Then enjoy the experience.");
+                }
+                else if (userResponse.ToLower() == "no")
+                {
+                    Console.WriteLine("Then Go Away.");
+                    SentryRPGTools.Quit();
+                }
             }
             //here comes the fun part
             Console.WriteLine("What is your name?");
             string characterName = Console.ReadLine();
             Console.WriteLine("Your Name is " + characterName + "!");
             Console.WriteLine("What is your age?");
-            var characterAge = Convert.ToInt16(Console.ReadLine());
+            int characterAge = Convert.ToInt32(Console.ReadLine());
             if (characterAge < 18)
             {
                 Console.WriteLine("You can't be UnderAge!");
@@ -61,12 +86,9 @@ namespace consoletest
             //game starts now.
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.Cyan;
-            double armorToughness = 0.1;
-            double attackDamage = 10.50 - armorToughness;
-            double enemyAttack = 5.00;
-            double enemyHP = 20.00;
+            double eArmorToughness = 0.1;
+            double cAttackDamage = 10.50 - eArmorToughness;
             double playerHP = 20.00;
-            bool dead = false;
             Console.WriteLine("You Enter the Temple, It's Walls shining a blue hue. 'my first quest' you thought, as you entered. what do you do?");
             string userAction = Console.ReadLine();
             if (userAction == "walk" || userAction == "run")
@@ -74,45 +96,11 @@ namespace consoletest
                 Console.WriteLine("you move deeper into the temple, when suddenly, a goblin appears! what will you do?");
             }
             userAction = Console.ReadLine();
-            armorToughness = 2.5;
-            while (!dead)
-            {
-                Console.WriteLine("The Goblin stands before you, growling in gibberish. \n HP: " + enemyHP + "\n Your HP: " + playerHP);
-                if (userAction == "Attack" || userAction == "attack")
-                {
-                    Console.WriteLine("You attack the Goblin for " + attackDamage + "!");
-                    enemyHP = enemyHP - attackDamage;
-                    Console.WriteLine("He has " + enemyHP + " hp left!");
-                    playerHP = playerHP - enemyAttack;
-                    Console.WriteLine("The Goblin hits you with his dagger! \n You have " + playerHP + " HP left!");
-                }
-                else if (userAction == "run" || userAction == "run away")
-                {
-                    Console.WriteLine("the Goblin stops you from running. you are cornered!");
-                    Console.WriteLine("The Goblin hits you with his dagger!");
-                    playerHP = playerHP - enemyAttack;
-                    Console.WriteLine("you have " + playerHP + " HP left!");
-                }
-                Console.ReadLine();
-                if (enemyHP >= 0 || playerHP >= 0)
-                {
-                    dead = true;
-                }
-            }
-            if(playerHP <= 0)
-            {
-                Console.WriteLine("you have perished.");
-                Environment.Exit(6);
-            }
-            if(enemyHP <= 0)
-            {
-                Console.WriteLine("you have killed the goblin!");
-            }
+            eArmorToughness = 2.5;
+
+            SentryRPGTools.Combat("Goblin", 20, 5, playerHP, cAttackDamage);
         }
-
     }
-
-
     class Item
     {
     }
@@ -121,9 +109,8 @@ namespace consoletest
         public static void Main(string[] args)
         {
             Game.StartGame();
-            Console.WriteLine("The Game has Shut Down. if your seeing this, it probably crashed.");
-            Console.ReadKey();
+            Console.WriteLine("The Game has Shut Down. If your seeing this, it probably crashed.");
+            SentryRPGTools.Quit();
         }
     }
 }
-
