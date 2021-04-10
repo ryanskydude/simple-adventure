@@ -102,6 +102,7 @@ namespace SimpleAdventure
                 }
             }
             Thread.Sleep(800);
+            Console.Clear();
             Console.WriteLine("you wait around the cell, unsure what to do. \n suddenly, a person is at the door. \n 'find a way.' he utters in a quiet coarse voice. \n the door unlocks.");
             playerUI(playerStatus, playerHP, playerGold, playerARMR);
             while (true)
@@ -117,6 +118,8 @@ namespace SimpleAdventure
                 {
                     Console.WriteLine("response invaild. Try Again.");
                 }
+                Thread.Sleep(800);
+                Console.Clear();
             }
         }
     }

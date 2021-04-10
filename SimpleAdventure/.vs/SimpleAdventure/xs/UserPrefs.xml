@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{021409C8-6C37-4D46-A3EB-77509C3208E8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleAdventure/MethodLibrary.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleAdventure/titleandprologue.cs">
     <Files>
-      <File FileName="SimpleAdventure/titleandprologue.cs" Line="110" Column="1" />
-      <File FileName="SimpleAdventure/MethodLibrary.cs" Line="1" Column="1" />
+      <File FileName="SimpleAdventure/titleandprologue.cs" Line="122" Column="33" />
+      <File FileName="SimpleAdventure/MethodLibrary.cs" Line="53" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SimpleAdventure" expanded="True">
             <Node name="SimpleAdventure" expanded="True">
-              <Node name="MethodLibrary.cs" selected="True" />
+              <Node name="titleandprologue.cs" selected="True" />
             </Node>
           </Node>
         </State>
