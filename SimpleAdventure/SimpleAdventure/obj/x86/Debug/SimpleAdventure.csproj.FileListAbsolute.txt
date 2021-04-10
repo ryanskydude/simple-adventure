@@ -1,0 +1,6 @@
+/home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/bin/Debug/SimpleAdventure.exe
+/home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/bin/Debug/SimpleAdventure.pdb
+/home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/obj/x86/Debug/SimpleAdventure.csprojAssemblyReference.cache
+/home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/obj/x86/Debug/SimpleAdventure.csproj.CoreCompileInputs.cache
+/home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/obj/x86/Debug/SimpleAdventure.exe
+/home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/obj/x86/Debug/SimpleAdventure.pdb

@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{021409C8-6C37-4D46-A3EB-77509C3208E8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleAdventure/MethodLibrary.cs">
+    <Files>
+      <File FileName="SimpleAdventure/titleandprologue.cs" Line="110" Column="1" />
+      <File FileName="SimpleAdventure/MethodLibrary.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SimpleAdventure" expanded="True">
+            <Node name="SimpleAdventure" expanded="True">
+              <Node name="MethodLibrary.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SimpleAdventure PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
