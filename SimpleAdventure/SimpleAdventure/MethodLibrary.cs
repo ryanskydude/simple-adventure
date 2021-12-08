@@ -54,11 +54,11 @@ namespace SimpleAdventure
             }
         }
 
-        public static void playerUI(string playerStatus, double playerHP, int playerGold, double PlayerARMR)
+        public static void playerUI(string playerStatus, double playerHP, int playerGold, double PlayerARMR, double PlayerATK)
         {
             Console.WriteLine("Player status is: " + playerStatus);
             Console.WriteLine();
-            Console.WriteLine("HP: " + playerHP + " Gold: " + playerGold + " Armor: " + PlayerARMR);
+            Console.WriteLine("HP: " + playerHP + " Gold: " + playerGold + " Armor: " + PlayerARMR + " Attack: " + PlayerATK);
         }
 
         public static void playerDeath()

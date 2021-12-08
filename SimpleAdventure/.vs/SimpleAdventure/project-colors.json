@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "021409c8-6c37-4d46-a3eb-77509c3208e8": {
+      "ProjectGuid": "021409c8-6c37-4d46-a3eb-77509c3208e8",
+      "DisplayName": "SimpleAdventure",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

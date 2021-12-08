@@ -4,3 +4,11 @@
 /home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/obj/x86/Debug/SimpleAdventure.csproj.CoreCompileInputs.cache
 /home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/obj/x86/Debug/SimpleAdventure.exe
 /home/samuraiweebr/Projects/SimpleAdventure/SimpleAdventure/obj/x86/Debug/SimpleAdventure.pdb
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\bin\Debug\SimpleAdventure.exe.config
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\bin\Debug\SimpleAdventure.exe
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\bin\Debug\SimpleAdventure.pdb
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\obj\x86\Debug\SimpleAdventure.csproj.AssemblyReference.cache
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\obj\x86\Debug\SimpleAdventure.csproj.SuggestedBindingRedirects.cache
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\obj\x86\Debug\SimpleAdventure.csproj.CoreCompileInputs.cache
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\obj\x86\Debug\SimpleAdventure.exe
+D:\GitHubRepos\simple-adventure\SimpleAdventure\SimpleAdventure\obj\x86\Debug\SimpleAdventure.pdb
