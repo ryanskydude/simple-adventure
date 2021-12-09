@@ -9,7 +9,7 @@ namespace SimpleAdventure
     {
         public static void Init()
         {
-            double releaseVersion = 0.5;
+            double releaseVersion = 0.6;
             string branchLevel = "alpha";
             String title = @"
 

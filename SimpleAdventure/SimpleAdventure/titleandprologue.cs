@@ -24,8 +24,26 @@ namespace SimpleAdventure
             Console.Clear();
             /*some really long writeline because im lazy.
               it also serves as the tutorial*/
-            Console.WriteLine("Welcome to Simple Adventure! \n This is my first game that i have been developing in my spare time. \n This is a text based adventure game, meaning you have to type your actions. \n Remember that not all actions are available, \n and try to be simple when entering a answer. example, inspect object. \n Im pretty new to coding. \n Press any key to continue");
+            Console.WriteLine("Welcome to Simple Adventure! \n This is my first game that i have been developing in my spare time. \n This is a text based adventure game, meaning you have to type your actions. \n Remember that you have only one life, \n not all actions are available, \n and try to be simple when entering a answer. example, inspect object. \n Im pretty new to coding. \n Press any key to continue");
             Console.ReadKey();
+
+            //skips the prologue if you want
+            Console.WriteLine("would you like to skip the prologue?");
+            while(true)
+            {
+                UserInput = Console.ReadLine();
+                if (UserInput.ToLower() == "yes")
+                {
+                    Game.Gamepart1();
+                    Console.WriteLine("something went wrong, Try Again later.");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
+                else if (UserInput.ToLower() == "no")
+                {
+                    break;
+                }
+            }
 
             //this is character creation
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
@@ -37,7 +55,13 @@ namespace SimpleAdventure
             Console.WriteLine("Your name is " + charName + "!");
             Thread.Sleep(800);
             Console.WriteLine("What is your age? Age will affect gameplay!");
-            charAge = InputNumber();
+            while (true)
+            {
+                charAge = InputNumber();
+                if (charAge > 120)
+                { Console.WriteLine("too old! Try Again!"); }
+                if (charAge < 120) { break; }
+            }
             Console.WriteLine("Your age is " + charAge + "!");
             Thread.Sleep(800);
             Console.WriteLine("What is your gender? Gender will affect gameplay!");
@@ -88,6 +112,11 @@ namespace SimpleAdventure
                 UserInput = Console.ReadLine();
                 if (UserInput.ToLower() == "inspect prison cell" || UserInput.ToLower() == "investigate prison cell")
                 {
+                    if (charAge > 80)
+                    {
+                        Console.WriteLine("you wither around the cell, before giving up. you lay on the cold ground, your frail old body giving in.");
+                        playerDeath();
+                    }
                     Console.WriteLine("you take a look at your surroundings. Its a cold, dark and damp prison cell. \n There are bars on a small window, letting out minimal moonlight as your only light source. \n The door is sealed by 3 locks. Next to the door lies some old shackles.");
                     break;
                 }
@@ -102,7 +131,7 @@ namespace SimpleAdventure
                     Console.WriteLine("response invaild. Try Again.");
                 }
             }
-            Thread.Sleep(4800);
+            Thread.Sleep(5800);
             Console.Clear();
             Console.WriteLine("you wait around the cell, unsure what to do. \n suddenly, a person is at the door. \n 'find a way.' he utters in a quiet coarse voice. \n the door unlocks.");
             playerUI(playerStatus, playerHP, playerGold, playerARMR, playerATK);
@@ -121,43 +150,102 @@ namespace SimpleAdventure
                 }
             }
 
-            Thread.Sleep(4800);
+            Thread.Sleep(5800);
             Console.Clear();
-            Console.WriteLine("you stand in the dark hallway. \n a torch lit room with its door cracked open, was to your left. \n a wooden door was to your right, with a window showing the moon above it.");
+            Console.WriteLine("you stand in the dark hallway. \n a torch lit room with its door cracked open stood to your left. \n a wooden door laid on your right, with a window showing the moon above it.");
             playerUI(playerStatus, playerHP, playerGold, playerARMR, playerATK);
-            while (true) 
+            while (true)
             {
-                 Console.WriteLine("What is your course of action?");
-                 UserInput= Console.ReadLine();
-                 if (UserInput.ToLower() == "go left" || UserInput.ToLower() == "left")
-                 {
-                     Console.WriteLine("you sneak towards the torch lit room, and peak into the door. \n the room was empty and there was chest in the middle. you open it and recieve: \n Iron Sword! +5 ATK \n \n you return back to the hallway and head towards the moon lit door.");
-                     playerATK = 5;
-                     break;
-                 }
-                 else if (UserInput.ToLower() == "go right" || UserInput.ToLower() == "right")
-                 {
-                     Console.WriteLine("you sneak towards the moonlit door.");
-                     break;
-                 }
+                Console.WriteLine("What is your course of action?");
+                UserInput = Console.ReadLine();
+                if (UserInput.ToLower() == "go left" || UserInput.ToLower() == "left")
+                {
+                    Console.WriteLine("you sneak towards the torch lit room, and peak into the door. \n the room was empty and there was chest in the middle. you open it and recieve: \n Iron Sword! +5 ATK \n \n you return back to the hallway and head towards the moon lit door.");
+                    playerATK = 5;
+                    break;
+                }
+                else if (UserInput.ToLower() == "go right" || UserInput.ToLower() == "right")
+                {
+                    Console.WriteLine("you sneak towards the moonlit door.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("response invaild. Try Again.");
+                }
             }
-            Thread.Sleep(4800);
+            Thread.Sleep(5800);
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.Clear();
             Console.WriteLine(" you walk outside, breathing in the fresh air. \n suddenly, a guard spots you and yells 'You Shouldn't be out here! Prisoner!' he rushes towards you. \n he swings at you but you dodge it barely.");
             playerUI(playerStatus, playerHP, playerGold, playerARMR, playerATK);
             while (true)
             {
                 Console.WriteLine("What is your course of action?");
+                UserInput = Console.ReadLine();
                 if (UserInput.ToLower() == "attack guard" || UserInput.ToLower() == "attack")
                 {
-                    if(playerATK == 5) { Console.WriteLine("you swing the iron sword you got at the guard. you slice his neck, and he falls to the ground."); }
-                    if(playerATK == 1) 
+                    if (playerATK == 5) { Console.WriteLine("you swing the iron sword you got at the guard. you slice his neck, and he falls to the ground. \n you walk towards the horse stalls, your sword covered in blood."); break; }
+                    if (playerATK == 1)
                     { Console.WriteLine("you punch the guard in the face, putting nothing but a dent in his helmet.");
-                      Console.WriteLine("")
+                        Console.WriteLine("he slashes, striking your right arm, causing a huge wound to open. \n you quickly dodge his second attack and run for the horse stall.");
+                        playerStatus = "injured";
+                        playerHP = 10;
+                        break;
                     }
+                }
+                else if (UserInput.ToLower() == "run" || UserInput.ToLower() == "guard")
+                {
+                    if (playerATK == 1) 
+                    { 
+                        Console.WriteLine("with nothing to fight or block with, you run towards the horse stall. \n he chases after you, stabbing you in the back. \n you trip and fall on to the ground, where he quickly stabs his sword through your skull."); 
+                        switch (charSex)
+                        {
+
+                            case "male":
+                                Console.WriteLine("'scum.' he mutters.");
+                                break;
+
+                            case "female":
+                                Console.WriteLine("'Bitch.' he mutters.");
+                                break;
+                        }
+                        playerDeath(); 
+                    }
+                    if (playerATK == 5)
+                    {
+                        Console.WriteLine("you wait for his next attack, then parry it with the sword you got. you quickly stab him straight through his head. \n as his body hits the ground, you run towards the horse stall.");
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("response invaild. Try Again.");
+                }
+            }
+            Thread.Sleep(5800);
+            Console.Clear();
+            Console.WriteLine("you quickly get on the horse and ride your way away from the prison. you have escaped this hell.");
+            playerUI(playerStatus, playerHP, playerGold, playerARMR, playerATK);
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("you have completed the prologue. would you like to continue?");
+            while (true)
+            {
+                UserInput = Console.ReadLine();
+                if (UserInput.ToLower() == "yes")
+                {
+                    Game.Gamepart1();
+                }
+                if (UserInput.ToLower() == "no")
+                {
+                    Console.WriteLine("thank you for playing!");
+                    Thread.Sleep(1000);
+                    Environment.Exit(0);
                 }
             }
         }
+        
     }
 
 }
