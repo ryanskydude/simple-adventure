@@ -35,7 +35,7 @@ namespace SimpleAdventure
                 if (UserInput.ToLower() == "yes")
                 {
                     Game.Gamepart1();
-                    Console.WriteLine("something went wrong, Try Again later.");
+                    Console.WriteLine("Thank you for playing!");
                     Console.ReadKey();
                     Environment.Exit(0);
                 }
@@ -93,14 +93,14 @@ namespace SimpleAdventure
             if (charSex == "milk")
             {
                 //this is art
-                Console.WriteLine("Since you are just milk you are unable to do anything that would require a consciousness. " +
-                    "You may think this is quite the disappointing outcome but is it really any worse than the other possibilities? " +
-                    "Sure you could have gone on a grand adventure and all, but remember, the choice was yours. " +
-                    "This was all indeed your own doing. You have no one to blame but yourself. " +
-                    "So here you are, getting what you deserve. " +
-                    "Having your existence be some spilled milk rotting for each day that goes until you are no more. " +
-                    "Remember and grieved by no one. " +
-                    "Since only a milkdrinker would cry over spilled milk. -Tullemania The intellectually challenged");
+                Console.WriteLine("Since you are just milk, you are unable to do anything that would require a consciousness. " +
+                    "\nYou may think this is quite the disappointing outcome, but is it really any worse than the other possibilities? " +
+                    "\nSure you could have gone on a grand adventure and all, but remember, the choice was yours. " +
+                    "\nThis was all indeed your own doing. You have no one to blame but yourself. " +
+                    "\nSo here you are, getting what you deserve. " +
+                    "\nHaving your existence be nothing but some spilled milk rotting for each day that goes until you are no more. " +
+                    "\nRemember and grieved by no one. " +
+                    "only a milkdrinker would cry over spilled milk. \n \n-Tullemania, The intellectually challenged \n");
                 playerDeath();
             }
             Console.WriteLine("You regain your consciousness inside of a damp and dark prison cell, unbeknownst to the reason your here.");

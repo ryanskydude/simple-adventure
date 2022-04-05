@@ -9,7 +9,7 @@ namespace SimpleAdventure
     {
         public static void Init()
         {
-            double releaseVersion = 0.6;
+            double releaseVersion = 0.7;
             string branchLevel = "alpha";
             String title = @"
 
@@ -36,7 +36,7 @@ namespace SimpleAdventure
             Console.WriteLine("By SamuraiWeebR");
             Console.WriteLine("This is A Very Basic Game.");
             Console.WriteLine("Release Ver: " + releaseVersion + branchLevel);
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
         }
 
 

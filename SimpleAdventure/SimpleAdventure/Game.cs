@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace SimpleAdventure
 {
@@ -69,7 +66,57 @@ namespace SimpleAdventure
             {
                 Console.WriteLine("a old woman, huh? be wary, wise one.");
             }
-            Console.WriteLine("so your name is " + charName + ", your " + charAge + " years old, and your a " + charSex + ". \n i pray that your journey is smooth, new one.");
+            Console.WriteLine("so your name is " + charName + ", your " + charAge + " years old, and your a " + charSex + ". \n i pray that your journey is safe, new one.");
+            Thread.Sleep(8000);
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.Clear();
+            Console.WriteLine("you awake in a Inn. the Innkeeper is shaking you awake. 'I thought you were damn near dead!' she proclaims. \n 'Your payment is due. pay now, or leave.' \n you must pay the Innkeeper 20 gold to continue staying.");
+            playerUI(playerStatus, playerHP, playerGold, playerARMR, playerATK);
+            Console.WriteLine("what is your course of action?");
+            while (true)
+            {
+                UserInput = Console.ReadLine();
+                if (UserInput.ToLower() == "pay" || UserInput.ToLower() == "pay Innkeeper")
+                {
+                    if (playerGold >= 20) { Console.WriteLine("you actually cheated on this game? wtf is wrong with you lmao"); playerDeath(); }
+                    Console.WriteLine("you give her all the gold you have, but it still isn't enough. \n 'Get Out! Before i get the Guards!' she pulls you out of bed and throws you out.");
+                    playerGold = 0;
+                    Console.WriteLine("-5 Gold...");
+                    break;
+                }
+                else if (UserInput.ToLower() == "leave" || UserInput.ToLower() == "run")
+                {
+                    Console.WriteLine("you leave quickly before the Innkeeper gets angry. 'don't come back till you have money, you broke bastard!' the Innkeeper shouted.");
+                    break;
+                }
+            }
+            Thread.Sleep(7000);
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
+            Console.Clear();
+            Console.WriteLine("you are in a shabby part of town, on the break of dawn. around you are houses falling apart at every corner. \n there are people sitting on the streets, and one of them coughs violently. \n you are weak from hunger and thrist and if you don't get help soon, you may die..");
+            playerStatus = "critical";
+            playerUI(playerStatus, playerHP, playerGold, playerARMR, playerATK);
+            Console.WriteLine("what is your course of action?");
+            while (true)
+            {
+                UserInput = Console.ReadLine();
+                if (UserInput.ToLower() == "leave" || UserInput.ToLower() == "walk away")
+                {
+                    Console.WriteLine("you try to leave but there is gate that is blocking you from entering the inner parts of the city. \n 'citzenship proof please' the guard says. you look at him confused. \n 'get out of here ya broke cunt.' the guard shoves you away from the gate. you fall and struggle to get back up.");
+                    break;
+                }
+                else if (UserInput.ToLower() == "rob person" || UserInput.ToLower() == "steal food" || UserInput.ToLower() == "steal water" || UserInput.ToLower() == "steal")
+                {
+                    Console.WriteLine("you slowly sneak up on a man who has a leather bag with some food in it. \nyou quickly grasp some food and try to get away, but you trip, and fall onto the ground. \n the man pulls a makeshift shank and stabs you in the back and twists. because your so weak, your body just gives up, and you are left to bleed to death.");
+                    playerDeath();
+                }
+                else Console.WriteLine("sorry, try again.");
+            }
+            Thread.Sleep(7000);
+            Console.Clear();
+            Console.WriteLine("lol");
+            playerUI(playerStatus, playerHP, playerGold, playerARMR, playerATK);
+            Console.WriteLine("what is your course of action?");
         }
     }
 }
